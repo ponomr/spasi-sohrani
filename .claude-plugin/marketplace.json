@@ -1,0 +1,14 @@
+{
+  "name": "spasi-sohrani",
+  "description": "Claude Code mod: two sets of seven icons above the prompt",
+  "owner": {
+    "name": "ponomr"
+  },
+  "plugins": [
+    {
+      "name": "spasi-sohrani",
+      "source": "./",
+      "description": "/spasi-sohrani and /spasi-vibe show or hide seven icons above the prompt"
+    }
+  ]
+}

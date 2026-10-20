@@ -1,0 +1,20 @@
+{
+  "name": "spasi-sohrani",
+  "version": "0.4.0",
+  "description": "/spasi-sohrani and /spasi-vibe show or hide a set of seven icons in a band above the prompt",
+  "author": {
+    "name": "ponomr"
+  },
+  "repository": "https://github.com/ponomr/spasi-sohrani",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "iconSize": {
+      "type": "number",
+      "title": "Icon size (px)",
+      "description": "Height of each icon in the desktop app, in CSS pixels",
+      "default": 90,
+      "min": 32,
+      "max": 400
+    }
+  }
+}
