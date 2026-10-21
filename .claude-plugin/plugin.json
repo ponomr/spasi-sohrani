@@ -1,7 +1,7 @@
 {
   "name": "spasi-sohrani",
-  "version": "0.4.0",
-  "description": "/spasi-sohrani and /spasi-vibe show or hide a set of seven icons in a band above the prompt",
+  "version": "0.5.0",
+  "description": "/spasi-sohrani and /spasi-vibe show or hide seven icons above the prompt; the icons also appear by themselves on dangerous commands, a full context and compaction",
   "author": {
     "name": "ponomr"
   },
@@ -15,6 +15,30 @@
       "default": 90,
       "min": 32,
       "max": 400
+    },
+    "autoSet": {
+      "type": "string",
+      "title": "Auto icon set",
+      "description": "Set shown by itself on a dangerous command, a full context or compaction",
+      "options": [
+        "sohrani",
+        "vibe"
+      ],
+      "default": "sohrani"
+    },
+    "onDanger": {
+      "type": "boolean",
+      "title": "Show on dangerous commands",
+      "description": "Show the icons when Claude runs rm -rf, git push --force, git reset --hard and the like",
+      "default": true
+    },
+    "contextThreshold": {
+      "type": "number",
+      "title": "Context threshold (%)",
+      "description": "Show the icons with a /compact hint once the context is this full; 100 turns it off",
+      "default": 80,
+      "min": 50,
+      "max": 100
     }
   }
 }
