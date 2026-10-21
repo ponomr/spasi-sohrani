@@ -17,6 +17,18 @@
 
 Мод запоминает показанный набор до конца сессии Claude Code.
 
+## Когда иконки появляются сами
+
+Даже если иконки скрыты, мод показывает их (по умолчанию набор `sohrani`) с подписью под рядом:
+
+| Когда | Подпись | Когда исчезают |
+|---|---|---|
+| Claude запускает опасную команду: `rm -rf`, `git push --force`, `git reset --hard`, `git clean -f`, `git restore .`, `git branch -D`, `git stash drop`, `DROP TABLE`, `sudo`, `chmod -R`, `curl … \| sh`, `kubectl delete`, `terraform destroy` и подобные, или MCP-инструмент с `delete`/`trash`/`destroy`/`drop`/`purge`/`remove` в имени | «Lord, have mercy: <команда>» — видна уже на запросе разрешения | при следующем сообщении |
+| контекст заполнен на 80% и больше (проверяется в конце каждого хода) | «My cup runneth over: context N% full, time to /compact» | после compact |
+| идёт compact (ручной или автоматический) | «Blessed are the summarized…» | когда compact закончится |
+
+Если набор показан вручную, подпись появляется под ним.
+
 ## Состав наборов
 
 ### `/spasi-sohrani`
@@ -82,7 +94,10 @@ claude plugin install spasi-sohrani --marketplace ponomr/spasi-sohrani
 
 ## Настройка
 
-`Icon size (px)` — высота иконки в приложении, по умолчанию 90, от 32 до 400. В терминале иконки занимают 5 строк.
+- `Icon size (px)` — высота иконки в приложении, по умолчанию 90, от 32 до 400. В терминале иконки занимают 5 строк.
+- `Auto icon set` — какой набор появляется сам: `sohrani` (по умолчанию) или `vibe`.
+- `Show on dangerous commands` — показывать ли иконки на опасных командах, по умолчанию да.
+- `Context threshold (%)` — с какого заполнения контекста напоминать про `/compact`, по умолчанию 80, от 50 до 100; 100 выключает напоминание.
 
 ## Разработка
 
